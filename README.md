@@ -1,4 +1,4 @@
-# streaming-02-multiple-processes
+# Project Title: streaming-02-multiple-processes
 
 > Multiple processes accessing a shared resource concurrently
 
@@ -8,6 +8,8 @@ This example starts a shared database and multiple processes.
 
 The processes represent multiple users, or locations, or programs 
 hitting a shared database at the same time. 
+
+To get more help on the early tasks, see https://github.com/MPhillipS556427/streaming-01-getting-started.git 
 
 ## Prerequisites
 
@@ -39,15 +41,26 @@ Execute multiple_processes.py.
 Read the output. Read the code. 
 Try to figure out what's going on. 
 
-1. What libraries did we import?
-1. Where do we set the TASK_DURATION_SECONDS?
-1. How many functions are defined? 
-1. What are the function names? 
-1. In general, what does each function do? 
+1. The following libraries must be in imported:
+    - csv: For reading CSV files.
+    - socket: For network communication using sockets.
+    - time: For handling time-related operations.
+    - logging: For logging messages and debugging.
+    - random: For generating random sleep times.
+1. Set the TASK_DURATION_SECONDS where we declare the program constants.
+1. There are two functions defined in the code.
+1. Below are the two function names:
+    - prepare_message_from_row(row)
+    - stream_row(input_file_name, address_tuple)
+1. In general, each function does the following:
+    - prepare_message_from_row(row): Takes a CSV row and prepares a binary message from its data.
+    - stream_row(input_file_name, address_tuple): Reads rows from an input CSV file, reverses their order, and streams them over a network socket. It also logs the sent data and writes it to an output file.
 1. Where does the execution begin? Hint: generally at the end of the file.
+    - The execution begins at the block following if __name__ == "__main__":. This block contains the main code that is executed when the script is run.
 1. How many processes do we start?
+    - 3
 1. How many records does each process insert?
-
+    - 2
 In this first run, we start 3 processes, 
 each inserting 2 records into a shared database 
 (for a total of 6 records inserted.)
@@ -121,12 +134,14 @@ Python has pretty helpful error messages.
 When you get an error, read them carefully. 
 
 - What error do you get?
+    - I received a datbase is locked error
 
 ### Database Is Locked Error
 
 Do a web search on the sqlite3 'database is locked' error.
 
 - What do you learn?
+    - When several processes or threads are attempting to access a SQLite database concurrently and one process has a lock on the database, preventing others from accessing it, the error "database is locked" is likely to occur. By making sure that database activities are correctly synchronized, utilizing methods like employing a mutex or making sure that only one process is able to access the database at once, this problem can be fixed.
 - Once a process fails, it crashes the main process and everything stops. 
 
 ### Deadlock
