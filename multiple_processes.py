@@ -37,7 +37,7 @@ logging.basicConfig(
 
 # Declare program constants (typically constants are named with ALL_CAPS)
 
-TASK_DURATION_SECONDS = 3 # TODO: increase this to 3 and see what happens
+TASK_DURATION_SECONDS = 0 # TODO: increase this to 3 and see what happens
 DIVIDER = "=" * 70  # A string divider for cleaner output formatting
 DB_NAME = "shared.db"
 
@@ -194,4 +194,3 @@ if __name__ == "__main__":
     # if the task duration is 0, then show the success message
     if TASK_DURATION_SECONDS == 0:
         logging.info(SUCCESS_MESSAGE)
-   

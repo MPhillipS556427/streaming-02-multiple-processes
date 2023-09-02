@@ -5,3 +5,30 @@ This will clear the console output.
 Run the file once while the tasks are longer. 
 
 Copy and paste the terminal results (when task_duration is 3) here.
+(base) malcolmphillip@Malcolms-MacBook-Air streaming-02-multiple-processes % /opt/
+homebrew/bin/python3 "/Users/malcolmphillip/ds-venv/CSIS 44671-Streaming Data/44-6
+71 Week2/streaming-02-multiple-processes/multiple_processes.py"
+2023-09-01 21:24:35,144 - INFO - 
+======================================================================
+STARTING UP.............................
+  Date and Time:    2023-09-01 at 09:24 PM
+  Operating System: posix Darwin 22.4.0
+  Python Version:   3.11.4
+  Path to Interpreter:  /opt/homebrew/opt/python@3.11/bin/python3.11
+======================================================================
+
+2023-09-01 21:24:35,144 - INFO - Called recreate_database().
+2023-09-01 21:24:35,144 - INFO - Called drop_table().
+2023-09-01 21:24:35,147 - INFO - Table 'pets' dropped successfully.
+2023-09-01 21:24:35,147 - INFO - Called create_table().
+2023-09-01 21:24:35,147 - INFO - Table 'pets' created successfully.
+2023-09-01 21:24:35,205 - INFO - Called process_two().
+2023-09-01 21:24:35,205 - INFO -   Called insert_pet() with process=P2, name=Cooper, breed=Rabbit.
+2023-09-01 21:24:35,205 - INFO - Called process_one().
+2023-09-01 21:24:35,205 - INFO -   Called insert_pet() with process=P1, name=Ace, breed=Dog.
+2023-09-01 21:24:35,206 - INFO -   Called insert_pet() with process=P1, name=Buddy, breed=Dog.
+2023-09-01 21:24:35,210 - INFO -   Called insert_pet() with process=P2, name=Dingo, breed=Dog.
+2023-09-01 21:24:35,212 - INFO - Called process_three().
+2023-09-01 21:24:35,212 - INFO -   Called insert_pet() with process=P3, name=Emma, breed=Rabbit.
+2023-09-01 21:24:35,213 - INFO -   Called insert_pet() with process=P3, name=Felix, breed=Cat.
+(base) malcolmphillip@Malcolms-MacBook-Air streaming-02-multiple-processes % 
